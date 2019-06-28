@@ -29,15 +29,11 @@
 <div class ="container">
 <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <tr>
         <a href="" class="cocktail-card card-title d-flex flex-column justify-content-end align-content-start">
           <%= cocktail.name %>
-          <td><%= link_to 'Show', cocktail_path(cocktail) %></td>
-        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-        </div>
+          <%= link_to 'Show', cocktail_path(cocktail) %>
+        <%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
     </a>
-  </tr>
     <% end %>
   </div>
 </div>
