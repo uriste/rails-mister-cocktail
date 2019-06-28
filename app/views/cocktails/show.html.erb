@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.banner_url %>);">
+  <div class="container">
+    <h1>For a relaxing time, try a <%= @cocktail.name %> with some Suntory whiskey</h1>
+  </div>
+</div>
+
+<p>If you'd like to make one then just add
+  <% @cocktail.doses.each do |dose| %>
+  <%= dose.description %> of <%= dose.ingredient.name %>,
+<% end %>
+stir, and in two shakes of a lamb's tail you'll be have a relaxing time with a <%= @cocktail.name %> and Suntory.</p>
+
+<hr>
+
+<p>Should we add something to our delicious, relaxing <%= @cocktail.name %> with Suntory whiskey?</p>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.association :ingredient, collection: Ingredient.order(name: :asc), prompt: "Choose an Ingredient" %>
+          <%= f.input :description, label: 'Dose', class: 'form-control-sm' %>
+          <%= f.submit %>
+        <% end %>
+

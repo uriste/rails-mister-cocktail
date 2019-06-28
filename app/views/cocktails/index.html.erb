@@ -1,0 +1,41 @@
+<div class="navbar navbar-expand-sm navbar-light navbar fixed-top d-flex justify-content-between">
+  <div class="empty">
+    <h6><a class="navbar-name" href="/cocktails">Suntory Whiskey Time</a></h6>
+  </div>
+
+  <a class="btn btn-primary" href="/cocktails/new">Make a new Suntory drink</a>
+
+ <!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+</div>
+
+<h1></h1>
+<div class="home-banner">
+      </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th colspan="3">
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cocktails.each do |cocktail| %>
+      <tr>
+        <td><%= cocktail.name %></td>
+        <td><%= link_to 'Show', cocktail_path(cocktail) %></td>
+        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create a new drink!', new_cocktail_path %>
