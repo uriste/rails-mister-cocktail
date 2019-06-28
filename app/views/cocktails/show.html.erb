@@ -1,14 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.banner_url %>);">
+<div class="show-banner" style="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.banner_url %>);">
   <div class="container">
     <h1>For a relaxing time, try a <%= @cocktail.name %> with some Suntory whiskey</h1>
   </div>
 </div>
 
-<p>If you'd like to make one then just add
+<h1>Just add
   <% @cocktail.doses.each do |dose| %>
   <%= dose.description %> of <%= dose.ingredient.name %>,
 <% end %>
-stir, and in two shakes of a lamb's tail you'll be have a relaxing time with a <%= @cocktail.name %> and Suntory.</p>
+stir, and in two shakes of a lamb's tail you'll be having a relaxing time with a <%= @cocktail.name %> and Suntory.</h1>
 
 <hr>
 

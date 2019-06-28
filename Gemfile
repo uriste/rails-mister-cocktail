@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
+gem 'cloudinary', '~> 1.9.1'
 
 
 # Use ActiveStorage variant
@@ -62,3 +63,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
+gem 'dotenv-rails', groups: [:development, :test]

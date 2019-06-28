@@ -1,3 +1,5 @@
+
+<body style="background: black">
 <div class="navbar navbar-expand-sm navbar-light navbar fixed-top d-flex justify-content-between">
   <div class="empty">
     <h6><a class="navbar-name" href="/cocktails">Suntory Whiskey Time</a></h6>
@@ -13,8 +15,7 @@
 
 <h1></h1>
 <div class="home-banner">
-      </div>
-
+</div>
 <table>
   <thead>
     <tr>
@@ -25,17 +26,20 @@
     </tr>
   </thead>
 
-  <tbody>
+<div class ="container">
+<div class="cards">
     <% @cocktails.each do |cocktail| %>
       <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail_path(cocktail) %></td>
+        <a href="" class="cocktail-card card-title d-flex flex-column justify-content-end align-content-start">
+          <%= cocktail.name %>
+          <td><%= link_to 'Show', cocktail_path(cocktail) %></td>
         <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+        </div>
+    </a>
+  </tr>
     <% end %>
-  </tbody>
+  </div>
+</div>
 </table>
-
-<br>
-
-<%= link_to 'Create a new drink!', new_cocktail_path %>
+</body>
